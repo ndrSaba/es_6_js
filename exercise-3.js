@@ -12,15 +12,16 @@ const persons = [
 ];
 
 function adultFilter(persons) {
-  const temp = [];
-  
-  for (let item of persons) {
-    if (item.age > 18) {
-      temp.push(item.name);
-    }
-  }
+    const adult = []
 
-  return temp;
+    persons.forEach(function (item, i) {
+      if (item.age >= 18) {
+        adult.push(item.name)
+      }
+    })
+
+    return adult
 }
 
-console.log(adultFilter);
+const adults = adultFilter(persons);
+console.log(adults);
